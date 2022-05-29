@@ -1,13 +1,25 @@
 from maths.differentiation import NumericalDifferentiation
-from user_io.console_input import get_function
+from user_io.console_input import *
+from user_io.console_output import output_dots
+from user_io.plot_drawer import draw_plot
 
 if __name__ == "__main__":
-    # func = lambda x, y: y + (1 + x) * y ** 2
-    # numerical_differentiation = NumericalDifferentiation(func, -1, 1, 1.5, 0.1, 0.001)
-    # dots1 = numerical_differentiation.improved_euler_method()
-    # dots2 = numerical_differentiation.adams_method()
-    #
-    # print(dots1)
-    # print(dots2)
+    differential_function = get_function()
 
-    get_function()
+    differential_function.h = get_h()
+    differential_function.e = get_e()
+
+    numerical_differentiation = NumericalDifferentiation(differential_function.function,
+                                                         differential_function.y0,
+                                                         differential_function.a,
+                                                         differential_function.b,
+                                                         differential_function.h,
+                                                         differential_function.e)
+
+    dots1 = numerical_differentiation.improved_euler_method()
+    dots2 = numerical_differentiation.adams_method()
+
+    output_dots(dots1, differential_function.solution, "Усовершенствованный метод Эйлера")
+    output_dots(dots2, differential_function.solution, "Метод Адамса")
+
+    draw_plot(dots1, dots2)
