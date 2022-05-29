@@ -22,4 +22,4 @@ if __name__ == "__main__":
     output_dots(dots1, differential_function.solution, "Усовершенствованный метод Эйлера")
     output_dots(dots2, differential_function.solution, "Метод Адамса")
 
-    draw_plot(dots1, dots2)
+    draw_plot(dots1, dots2, differential_function.solution)
