@@ -1,5 +1,4 @@
-from maths.data import Method, DifferentialFunction, Functions
-from enum import Enum
+from maths.data import DifferentialFunction, Functions
 
 
 def get_function() -> DifferentialFunction:
