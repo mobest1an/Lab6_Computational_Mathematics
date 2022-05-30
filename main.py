@@ -9,12 +9,7 @@ if __name__ == "__main__":
     differential_function.h = get_h()
     differential_function.e = get_e()
 
-    numerical_differentiation = NumericalDifferentiation(differential_function.function,
-                                                         differential_function.y0,
-                                                         differential_function.a,
-                                                         differential_function.b,
-                                                         differential_function.h,
-                                                         differential_function.e)
+    numerical_differentiation = NumericalDifferentiation(differential_function)
 
     dots1 = numerical_differentiation.improved_euler_method()
     dots2 = numerical_differentiation.adams_method()
