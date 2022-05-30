@@ -44,7 +44,7 @@ class NumericalDifferentiation(BasicDifferentiation):
 
             dots.append([x, y])
 
-            if round(x, 5) > round(self.function.b, 5):
+            if round(x, 6) > round(self.function.b, 6):
                 break
 
         dots.pop(-1)
@@ -72,7 +72,7 @@ class NumericalDifferentiation(BasicDifferentiation):
 
             dots.append([x, y])
 
-            if round(x, 5) > round(old_b, 5):
+            if round(x, 6) > round(old_b, 6):
                 break
 
         dots.pop(-1)
