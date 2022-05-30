@@ -1,7 +1,9 @@
+from typing import Callable
+
 import matplotlib.pyplot as plt
 
 
-def draw_plot(dots1, dots2, real_function):
+def draw_plot(dots1: list, dots2: list, real_function: Callable[[float, float], float]):
     x_ax1 = [dots[0] for dots in dots1]
     y_ax1 = [dots[1] for dots in dots1]
     x_ax2 = [dots[0] for dots in dots2]

@@ -1,4 +1,7 @@
-def output_dots(dots, real_function, method_name):
+from typing import Callable
+
+
+def output_dots(dots: list, real_function: Callable[[float, float], float], method_name: str):
     print("\n\nРезультаты вычисления методом:", method_name)
     print("%12s%12s%12s%12s" % ("X", "Y", "Real_Y", "Delta_Y"))
     for dot in dots:
