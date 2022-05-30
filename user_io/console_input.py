@@ -27,27 +27,6 @@ def get_function() -> DifferentialFunction:
     return function
 
 
-def get_method() -> Enum:
-    methods_list = {}
-
-    i = 0
-    for method in Method:
-        i += 1
-        methods_list[i] = method
-        print(str(i) + '.', method.value)
-
-    while True:
-        try:
-            method_number = input("Введите номер метода, которым нужно решить: ")
-            method_number = int(method_number)
-            method = methods_list[method_number]
-            return method
-        except ValueError:
-            print("Неправильный формат ввода!")
-        except KeyError:
-            print("Данного метода не существует!")
-
-
 def get_h() -> float:
     while True:
         try:
@@ -64,4 +43,3 @@ def get_e() -> float:
             return e
         except ValueError:
             print("Неправильный формат ввода!")
-            
