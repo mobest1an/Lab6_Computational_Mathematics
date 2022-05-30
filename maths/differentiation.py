@@ -33,7 +33,7 @@ class NumericalDifferentiation(BasicDifferentiation):
             x = x_prev + new_h
             y = calculate_y(x_prev, y_prev, new_h, self.function.function)
 
-            y_half_h = calculate_y(x_prev + new_h / 2, calculate_y(x_prev, y_prev, new_h / 2, self.function.function), new_h / 2, self.function.function)
+            y_half_h = calculate_y(x_prev + new_h, calculate_y(x_prev, y_prev, new_h / 2, self.function.function), new_h / 2, self.function.function)
 
             if abs(y - y_half_h) > self.function.e:
                 new_h /= 2
